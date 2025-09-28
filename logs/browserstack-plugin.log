@@ -2,3 +2,5 @@
 22:55:23.303 [AWT-EventQueue-0] INFO  com.browserstack.utils.Helpers - null
 22:56:22.629 [AWT-EventQueue-0] INFO  c.b.l.BrowserStackRunExtension - gradle
 22:56:22.630 [AWT-EventQueue-0] INFO  com.browserstack.utils.Helpers - null
+23:06:43.028 [AWT-EventQueue-0] INFO  c.b.l.BrowserStackRunExtension - gradle
+23:06:43.029 [AWT-EventQueue-0] INFO  com.browserstack.utils.Helpers - null

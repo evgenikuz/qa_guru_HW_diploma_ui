@@ -14,7 +14,7 @@ public class TestBase {
     @BeforeAll
     static void onSetUpConfigurations() {
         Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://www.postcrossing.com/";
+        Configuration.baseUrl = "https://www.postcrossing.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url") + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
