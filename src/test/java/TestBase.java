@@ -13,6 +13,8 @@ public class TestBase {
 
     @BeforeAll
     static void onSetUpConfigurations() {
+        Configuration.browser = "Chrome";
+        Configuration.browserVersion = "141.0";
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://www.postcrossing.com";
         Configuration.pageLoadStrategy = "eager";
