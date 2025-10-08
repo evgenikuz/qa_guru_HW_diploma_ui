@@ -15,14 +15,14 @@ public class TestBase {
     static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     @BeforeAll
     static void onSetUpConfigurations() {
-        String launchType = System.getProperty("testLaunchType", "local");
+        String launchType = System.getProperty("testLaunchType", "remote");
         Configuration.browser = config.getBrowserName();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.browserSize = config.getBrowserSize();
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.pageLoadStrategy = "eager";
         if (launchType.equals("remote")) {
-            Configuration.remote = "https://user1:1234@" + config.getRemoteUrl() + "/wd/hub";
+            Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url") + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
