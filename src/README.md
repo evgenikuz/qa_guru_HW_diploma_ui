@@ -53,9 +53,9 @@ clean test -Dselenoid_login=${SELENOID_LOGIN} -Dselenoid_password=${SELENOID_PAS
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в Jenkins
 
-Для запуска сборки необходимо перейти в раздел <code>Собрать с параметрами</code> и нажать кнопку <code>Собрать</code>.
+Для запуска сборки необходимо перейти в раздел <code>Build with Parameters</code> и нажать кнопку <code>Build</code>.
 <p align="center">
-<img title="Jenkins Build" src="media/screens/jenkins.png">
+<img title="Jenkins Build" src="media/screens/jenkins.jpg">
 </p>
 После выполнения сборки, в блоке <code>История сборок</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
@@ -71,13 +71,13 @@ clean test -Dselenoid_login=${SELENOID_LOGIN} -Dselenoid_password=${SELENOID_PAS
 На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них добавлены и проходятся вручную, сколько автоматизированы. Новые тесты, а так же результаты прогона приходят по интеграции при каждом запуске сборки.
 
 <p align="center">
-<img title="Allure TestOps DashBoard" src="media/screens/AllureTestOps.png">
+<img title="Allure TestOps DashBoard" src="media/screens/testops.png">
 </p>
 
 ### Результат выполнения автотеста
 
 <p align="center">
-<img title="Test Results in Alure TestOps" src="media/screens/allurResults.png">
+<img title="Test Results in Alure TestOps" src="media/screens/testopsResults.png">
 </p>
 
 ### <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
@@ -85,12 +85,12 @@ clean test -Dselenoid_login=${SELENOID_LOGIN} -Dselenoid_password=${SELENOID_PAS
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне тестов.
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="media/screens/Bot.png">
+<img width="70%" title="Telegram Notifications" src="media/screens/bot.jpg">
 </p>
 
 ### <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logo/Selenoid.svg"> Видео примера запуска тестов в Selenoid
 
 В отчетах Allure для каждого теста прикреплен не только скриншот, но и видео прохождения теста
 <p align="center">
-  <img title="Selenoid Video" src="media/screens/Video.gif">
+  <img title="Selenoid Video" src="media/video/tests.gif">
 </p>
