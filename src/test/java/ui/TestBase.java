@@ -14,18 +14,20 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBase {
-    static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
     @BeforeAll
     static void onSetUpConfigurations() {
         String launchType = System.getProperty("testLaunchType", "local");
+        System.setProperty("testLaunchType", launchType);
+        WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+
         Configuration.browser = config.getBrowserName();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.browserSize = config.getBrowserSize();
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.pageLoadStrategy = "eager";
         if (launchType.equals("remote")) {
-            Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url") + "/wd/hub";
+            Configuration.remote = "https://" + System.getProperty("selenoid_login") + ":" + System.getProperty("selenoid_password") + "@" + config.getRemoteUrl() + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
@@ -47,4 +49,9 @@ public class TestBase {
         Attach.browserConsoleLogs();
         Attach.addVideo();
     }
+
+//    @AfterEach
+//    void tearDown() {
+//        Selenide.closeWebDriver();
+//    }
 }

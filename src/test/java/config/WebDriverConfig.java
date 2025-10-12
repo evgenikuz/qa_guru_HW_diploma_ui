@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
 
 public interface WebDriverConfig extends Config {
 
-    @Key("baseUrl")
+    @Key("base.url")
     @DefaultValue("https://www.postcrossing.com")
     String getBaseUrl();
 
@@ -17,9 +17,13 @@ public interface WebDriverConfig extends Config {
     String getBrowserName();
 
     @Key("browser.version")
+    @DefaultValue("141")
     String getBrowserVersion();
 
     @Key("browser.size")
-    @DefaultValue("1980x1080")
+    @DefaultValue("1920x1080")
     String getBrowserSize();
+
+    @Key("remote.url")
+    String getRemoteUrl();
 }
