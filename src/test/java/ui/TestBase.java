@@ -1,3 +1,5 @@
+package ui;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.WebDriverConfig;
@@ -13,9 +15,10 @@ import java.util.Map;
 
 public class TestBase {
     static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+
     @BeforeAll
     static void onSetUpConfigurations() {
-        String launchType = System.getProperty("testLaunchType", "remote");
+        String launchType = System.getProperty("testLaunchType", "local");
         Configuration.browser = config.getBrowserName();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.browserSize = config.getBrowserSize();
