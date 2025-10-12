@@ -1,7 +1,6 @@
 package ui;
 
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -9,6 +8,8 @@ import pages.SignUpPage;
 
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 
+@Epic("Авторизация и регистрация")
+@Feature("Регистрация")
 public class SignUpTests extends TestBase {
     SignUpPage signUpPage = new SignUpPage();
 
@@ -18,7 +19,8 @@ public class SignUpTests extends TestBase {
             "helga1234, 'helga1234' is available!"
     })
     @ParameterizedTest(name = "При вводе {0} появляется ошибка {1}")
-    @DisplayName("Проверка поля Username при регистрации")
+    @DisplayName("При вводе данных в поле Username осуществляется проверка доступности юзернейма")
+    @Story("Проверка поля Username на странице регистрации")
     @Owner("KharitonovaES")
     @Severity(CRITICAL)
     void UsernameInputTest (String usernameValue, String warning) {

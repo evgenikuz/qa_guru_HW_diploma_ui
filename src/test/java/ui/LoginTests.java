@@ -1,7 +1,6 @@
 package ui;
 
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
@@ -9,12 +8,14 @@ import pages.LoginPage;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 import static io.qameta.allure.SeverityLevel.NORMAL;
 
+@Epic("Авторизация и регистрация")
+@Feature("Авторизация")
 public class LoginTests extends TestBase {
     LoginPage loginPage = new LoginPage();
 
     @Test
-    @DisplayName("Проверка авторизации с неверными данными")
-    @Owner("KharitonovaES")
+    @DisplayName("При вводе невалидных данных появляется ошибка 'Wrong username or password'")
+    @Story("Проверка авторизации с невалидными данными")
     @Severity(CRITICAL)
     void LoginWithWrongCredentials() {
         loginPage.openLoginPage()
@@ -25,7 +26,8 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка перехода на страницу восстановления пароля по кнопке 'Forgot Something'")
+    @DisplayName("Осуществляется переход на страницу восстановления пароля по кнопке 'Forgot Something'")
+    @Story("Проверка перехода на страницу восстановления пароля по кнопке 'Forgot Something'")
     @Owner("KharitonovaES")
     @Severity(NORMAL)
     void ForgotSomethingLinkTest() {

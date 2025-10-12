@@ -1,8 +1,6 @@
 package ui;
 
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,6 +14,7 @@ import java.util.stream.Stream;
 import static io.qameta.allure.SeverityLevel.MINOR;
 import static io.qameta.allure.SeverityLevel.NORMAL;
 
+@Epic("Элементы сайта")
 @Feature("Главная страница")
 public class MainPageTests extends TestBase {
     MainPage mainPage = new MainPage();
@@ -29,7 +28,8 @@ public class MainPageTests extends TestBase {
     }
 
     @ParameterizedTest(name = "В выпадающем меню кнопки {0} содержатся элементы {1}")
-    @DisplayName("Проверка верхних выпадающих меню")
+    @DisplayName("По наведению мышки на определенные кнопки в хедере отображаются верные выпадающие меню со списком значений")
+    @Story("Проверка хедера")
     @MethodSource
     @Owner("KharitonovaES")
     @Severity(MINOR)
@@ -39,7 +39,8 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка перехода на страницу регистрации по кнопке 'Create an account' на главной странице")
+    @DisplayName("Осуществляется переход на страницу регистрации по кнопке 'Create an account'")
+    @Story("Проверка перехода на страницу регистрации по кнопке 'Create an account' на главной странице")
     @Owner("KharitonovaES")
     @Severity(NORMAL)
     void createAccountButtonTest() {

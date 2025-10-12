@@ -1,7 +1,6 @@
 package ui;
 
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,6 +13,8 @@ import java.util.stream.Stream;
 
 import static io.qameta.allure.SeverityLevel.NORMAL;
 
+@Epic("Информация для пользователя")
+@Feature("Postal Monitor")
 public class PostalMonitorTests extends TestBase{
     PostalMonitorPage postalMonitorPage = new PostalMonitorPage();
 
@@ -25,7 +26,8 @@ public class PostalMonitorTests extends TestBase{
         );
     }
     @ParameterizedTest(name = "Для страны {1} недоступна отправка почты в страны {2}")
-    @DisplayName("Проверка работы Postal Monitor по отправке")
+    @DisplayName("Postal Monitor верно фильтрует и показывает страны, куда недоступна отправка почты")
+    @Story("Проверка работы Postal Monitor по исходящей почте")
     @MethodSource
     @Owner("KharitonovaES")
     @Severity(NORMAL)
@@ -43,7 +45,8 @@ public class PostalMonitorTests extends TestBase{
         );
     }
     @ParameterizedTest(name = "Для страны {1} недоступно получение почты из стран {2}")
-    @DisplayName("Проверка работы Postal Monitor по получению")
+    @DisplayName("Postal Monitor верно фильтрует и показывает страны, откуда недоступно получение почты")
+    @Story("Проверка работы Postal Monitor по входящей почте")
     @MethodSource
     @Owner("KharitonovaES")
     @Severity(NORMAL)
