@@ -19,6 +19,7 @@ public class LoginTests extends TestBase {
     @Severity(CRITICAL)
     void LoginWithWrongCredentials() {
         loginPage.openLoginPage()
+                .closeModal()
                 .enterUsername("helga")
                 .enterPassword("12345")
                 .pressLoginButton()
@@ -32,6 +33,7 @@ public class LoginTests extends TestBase {
     @Severity(NORMAL)
     void ForgotSomethingLinkTest() {
         loginPage.openLoginPage()
+                .closeModal()
                 .clickOnForgotSomething();
     }
 

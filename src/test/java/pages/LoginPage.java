@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.ConcentModalComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -15,11 +16,18 @@ public class LoginPage {
             loginError = $("#loginForm .error"),
             forgotSomethingLink = $(".forgot-something");
 
+    ConcentModalComponent concentModalComponent = new ConcentModalComponent();
+
     public LoginPage openLoginPage() {
         step("Открываем страницу авторизации", () -> {
             open("/login");
             header.shouldHave(text("Log in"));
         });
+        return this;
+    }
+
+    public LoginPage closeModal() {
+        concentModalComponent.checkModalExists();
         return this;
     }
 
