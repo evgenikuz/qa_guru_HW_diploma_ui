@@ -16,6 +16,7 @@ public class LoginTests extends TestBase {
     @Test
     @DisplayName("При вводе невалидных данных появляется ошибка 'Wrong username or password'")
     @Story("Проверка авторизации с невалидными данными")
+    @Owner("KharitonovaES")
     @Severity(CRITICAL)
     void LoginWithWrongCredentials() {
         loginPage.openLoginPage()
