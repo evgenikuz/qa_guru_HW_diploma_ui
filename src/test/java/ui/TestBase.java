@@ -27,7 +27,7 @@ public class TestBase {
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.pageLoadStrategy = "eager";
         if (launchType.equals("remote")) {
-            Configuration.remote = "https://" + System.getProperty("selenoid_login") + ":" + System.getProperty("selenoid_password") + "@" + config.getRemoteUrl() + "/wd/hub";
+            Configuration.remote = "https://user1:1234@" + config.getRemoteUrl() + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,

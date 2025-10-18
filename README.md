@@ -45,10 +45,9 @@ clean test
 При выполнении данной команды в терминале IDE тесты запустятся локально.
 
 ```
-clean test -Dselenoid_login=${SELENOID_LOGIN} -Dselenoid_password=${SELENOID_PASSWORD} -DtestLaunchType=remote
+clean test -DtestLaunchType=remote
 ```
 При выполнении данной команды в терминале IDE тесты запустятся удаленно в <code>Selenoid</code>.
-(selenoid_login и selenoid_password необходимо указать)
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в Jenkins
 
