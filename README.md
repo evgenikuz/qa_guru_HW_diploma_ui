@@ -91,7 +91,7 @@ clean test -DtestLaunchType=remote
 
 Для запуска сборки необходимо перейти в раздел <code>Build with Parameters</code> и нажать кнопку <code>Build</code>.
 <p align="center">
-<img title="Jenkins Build" src="media/screens/jenkins.jpg">
+<img title="Jenkins Build" src="media/screens/jenkins.jpg" width="750">
 </p>
 После выполнения сборки, в блоке <code>История сборок</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
@@ -105,7 +105,7 @@ clean test -DtestLaunchType=remote
 >- <code><strong>*CATEGORIES*</strong></code> - отображает распределение неудачных тестов по типам дефектов
 
 <p align="center">
-<img title="Allure Overview" src="media/screens/allureMain.png">
+<img title="Allure Overview" src="media/screens/allureMain.png" width="750">
 </p>
 
 ### Список тестов с шагами и тестовыми артефактами
@@ -123,7 +123,7 @@ clean test -DtestLaunchType=remote
 >- Video
 
 <p align="center">
-<img title="Allure Attaches" src="media/screens/allureAttaches.png">
+<img title="Allure Attaches" src="media/screens/allureAttaches.png" width="750">
 </p>
 
 ## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logo/AllureTestOps.svg"> Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/4949/dashboards">Allure TestOps</a></b>
@@ -132,18 +132,24 @@ clean test -DtestLaunchType=remote
 Результат выполнения автотестов отображается в <code>Allure TestOps</code>
 На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
 
+<p align="center">
+<img title="Allure TestOps DashBoard" src="media/screens/testops.png" width="750">
+</p>
+
 Тест-кейсы в проекте импортируются и постоянно обновляются из кода,
 поэтому нет необходимости в синхронизации ручных тест-кейсов и автотестов.\
 Достаточно создать и обновить автотест в коде и тест-кейс всегда будет в актуальном состоянии.
 
+### Результат выполнения автотестов в <b><a target="_blank" href="https://allure.autotests.cloud/launch/48635/tree?search=W3siaWQiOiJzdGF0dXMiLCJ0eXBlIjoidGVzdFN0YXR1c0FycmF5IiwidmFsdWUiOlsicGFzc2VkIl19XQ%3D%3D&treeId=0">TestOps</a></b>
+
 <p align="center">
-<img title="Allure TestOps DashBoard" src="media/screens/testops.png">
+<img title="Test Results in Alure TestOps" src="media/screens/testopsResults.png" width="750">
 </p>
 
-### <b><a target="_blank" href="https://allure.autotests.cloud/launch/48635/tree?search=W3siaWQiOiJzdGF0dXMiLCJ0eXBlIjoidGVzdFN0YXR1c0FycmF5IiwidmFsdWUiOlsicGFzc2VkIl19XQ%3D%3D&treeId=0">Результат выполнения автотестов</a></b>
+## Allure TestOps Test Cases
 
 <p align="center">
-<img title="Test Results in Alure TestOps" src="media/screens/testopsResults.png">
+  <img src="media/screens/testopsTestCases.png" alt="AllureTestOpsTests" width="750">
 </p>
 
 ### <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
