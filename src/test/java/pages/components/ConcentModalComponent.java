@@ -3,6 +3,7 @@ package pages.components;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 import static io.qameta.allure.Allure.step;
 
 public class ConcentModalComponent {
@@ -11,6 +12,7 @@ public class ConcentModalComponent {
 
     public ConcentModalComponent checkModalExists() {
         step("Проверяем наличие модального окна", () -> {
+            sleep(5000);
             if (concentModal.isDisplayed()) {
                 step("Закрываем модальное окно", () -> {
                     concentButton.click();
