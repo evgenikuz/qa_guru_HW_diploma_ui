@@ -7,10 +7,10 @@ import org.aeonbits.owner.Config;
 })
 public interface AuthConfig extends Config {
 
-    @Key("selenoid.getSelenoidUsername")
+    @Key("selenoid.username")
     String getSelenoidUsername();
 
-    @Key("selenoid.getSelenoidPassword")
+    @Key("selenoid.password")
     String getSelenoidPassword();
 
 }
