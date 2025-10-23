@@ -2,6 +2,7 @@ package ui;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.AuthConfig;
 import config.WebDriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -20,6 +21,7 @@ public class TestBase {
         String launchType = System.getProperty("testLaunchType", "local");
         System.setProperty("testLaunchType", launchType);
         WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+        AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
 
         Configuration.browser = config.getBrowserName();
         Configuration.browserVersion = config.getBrowserVersion();
@@ -27,7 +29,7 @@ public class TestBase {
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.pageLoadStrategy = "eager";
         if (launchType.equals("remote")) {
-            Configuration.remote = "https://user1:1234@" + config.getRemoteUrl() + "/wd/hub";
+            Configuration.remote = "https://" + authConfig.username() + ":" + authConfig.password() + "@" + config.getRemoteUrl() + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
