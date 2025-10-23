@@ -27,7 +27,7 @@ public class SignUpPage {
     }
 
     public SignUpPage enterUsername(String value) {
-        step("Вводим username", () -> {
+        step("Вводим getSelenoidUsername", () -> {
             usernameInput.sendKeys(value);
         });
         return this;

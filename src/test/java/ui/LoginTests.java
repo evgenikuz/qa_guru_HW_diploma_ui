@@ -14,7 +14,7 @@ public class LoginTests extends TestBase {
     LoginPage loginPage = new LoginPage();
 
     @Test
-    @DisplayName("При вводе невалидных данных появляется ошибка 'Wrong username or password'")
+    @DisplayName("При вводе невалидных данных появляется ошибка 'Wrong getSelenoidUsername or getSelenoidPassword'")
     @Story("Проверка авторизации с невалидными данными")
     @Owner("KharitonovaES")
     @Severity(CRITICAL)
@@ -24,7 +24,7 @@ public class LoginTests extends TestBase {
                 .enterUsername("helga")
                 .enterPassword("12345")
                 .pressLoginButton()
-                .checkError("Wrong username or password");
+                .checkError("Wrong getSelenoidUsername or getSelenoidPassword");
     }
 
     @Test

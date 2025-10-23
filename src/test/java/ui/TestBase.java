@@ -29,7 +29,7 @@ public class TestBase {
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.pageLoadStrategy = "eager";
         if (launchType.equals("remote")) {
-            Configuration.remote = "https://" + authConfig.username() + ":" + authConfig.password() + "@" + config.getRemoteUrl() + "/wd/hub";
+            Configuration.remote = "https://" + authConfig.getSelenoidUsername() + ":" + authConfig.getSelenoidPassword() + "@" + config.getRemoteUrl() + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,

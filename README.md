@@ -83,15 +83,15 @@ clean test
 ```
 Для удаленного запуска в Docker-контейнере <code>Selenoid</code> в терминале IDE нужно ввести:
 ```
-clean test -DtestLaunchType=remote -Dusername=${USERNAME} -Dpassword=${PASSWORD}
+clean test -DtestLaunchType=remote -Dusername=${SELENOID_USERNAME} -Dpassword=${SELENOID_PASSWORD}
 ```
 Самые любопытные могут попробовать изменить параметры:
 ```
-clean test -DtestLaunchType=${TEST_LAUNCH_TYPE} -Dusername=${USERNAME} -Dpassword=${PASSWORD} -Dbrowser.name=${BROWSER_NAME} -Dbrowser.version=${BROWSER_VERSION} -Dbrowser.size=${BROWSER_SIZE} -Dremote.url=${SELENOID_URL}
+clean test -DtestLaunchType=${TEST_LAUNCH_TYPE} -Dusername=${SELENOID_USERNAME} -Dpassword=${SELENOID_PASSWORD} -Dbrowser.name=${BROWSER_NAME} -Dbrowser.version=${BROWSER_VERSION} -Dbrowser.size=${BROWSER_SIZE} -Dremote.url=${SELENOID_URL}
 ```
 - `-DtestLaunchType` - параметр, позволяющий выбрать запуск удаленно <code>remote</code> или локально <code>local</code>.
-- `-Dusername` - имя юзера в Selenoid.
-- `-Dpassword` - пароль юзера в Selenoid.
+- `-Dselenoid.username` - имя юзера в Selenoid.
+- `-Dselenoid.password` - пароль юзера в Selenoid.
 - `-Dbrowser.name` - параметр, позволяющий выбрать браузер <code>chrome</code> или <code>firefox</code>.
 - `-Dbrowser.version` - параметр, позволяющий выбрать версию chrome <code>127.0, 128.0</code> или firefox <code>124.0, 125.0</code>.
 - `-Dbrowser.size` - параметр, позволяющий выбрать размер браузера <code>1980x1080, 1280x1024, 800x600</code>.

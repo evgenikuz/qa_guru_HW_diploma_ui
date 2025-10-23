@@ -17,7 +17,7 @@ public class RecoverPasswordPage {
     public RecoverPasswordPage openRecoverPasswordPage() {
         step("Открываем страницу восстановления пароля", () -> {
             open("/recoverpassword");
-            headers.shouldHave(exactTextsCaseSensitive("Forgot your username?", "Forgot your password?", "Forgot your password and your email address has changed?"));
+            headers.shouldHave(exactTextsCaseSensitive("Forgot your getSelenoidUsername?", "Forgot your getSelenoidPassword?", "Forgot your getSelenoidPassword and your email address has changed?"));
         });
         return this;
     }
