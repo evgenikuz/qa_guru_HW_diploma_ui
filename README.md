@@ -87,7 +87,7 @@ clean test -DtestLaunchType=remote -Dusername=${SELENOID_USERNAME} -Dpassword=${
 ```
 Самые любопытные могут попробовать изменить параметры:
 ```
-clean test -DtestLaunchType=${TEST_LAUNCH_TYPE} -Dusername=${SELENOID_USERNAME} -Dpassword=${SELENOID_PASSWORD} -Dbrowser.name=${BROWSER_NAME} -Dbrowser.version=${BROWSER_VERSION} -Dbrowser.size=${BROWSER_SIZE} -Dremote.url=${SELENOID_URL}
+clean test -DtestLaunchType=${TEST_LAUNCH_TYPE} -Dselenoid.username=${SELENOID_USERNAME} -Dselenoid.password=${SELENOID_PASSWORD} -Dbrowser.name=${BROWSER_NAME} -Dbrowser.version=${BROWSER_VERSION} -Dbrowser.size=${BROWSER_SIZE} -Dremote.url=${SELENOID_URL}
 ```
 - `-DtestLaunchType` - параметр, позволяющий выбрать запуск удаленно <code>remote</code> или локально <code>local</code>.
 - `-Dselenoid.username` - имя юзера в Selenoid.
