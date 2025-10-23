@@ -1,4 +1,6 @@
-# Проект по автоматизации тестовых сценариев для сайта Postcrossing
+# Проект по автоматизации тестовых сценариев для сайта [Postcrossing](www.postcrossing.com)
+<img title="Postcrossing" src="media/logo/Postcrossing.png">
+
 ## :scroll: Содержание:
 
 - [Используемый стек](#computer-используемый-стек)
