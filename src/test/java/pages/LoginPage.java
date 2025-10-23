@@ -10,8 +10,8 @@ import static io.qameta.allure.Allure.step;
 
 public class LoginPage {
     private final SelenideElement header = $("h2"),
-            usernameInput = $("#getSelenoidUsername"),
-            passwordInput = $("#getSelenoidPassword"),
+            usernameInput = $("#username"),
+            passwordInput = $("#password"),
             loginButton = $("#loginButton"),
             loginError = $("#loginForm .error"),
             forgotSomethingLink = $(".forgot-something");
