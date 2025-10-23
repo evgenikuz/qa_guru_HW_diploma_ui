@@ -19,8 +19,8 @@ public class PostalMonitorTests extends TestBase{
 
     static Stream<Arguments> checkPostalMonitorShowsCorrectOutgoingInfo() {
         return Stream.of(
-                Arguments.of("FO", "Faroe Islands", List.of("Canada", "Eritrea", "Haiti", "Syria", "Vanuatu", "Yemen")),
-                Arguments.of("FR", "France", List.of("Canada", "Haiti", "Syria", "Yemen")),
+                Arguments.of("FO", "Faroe Islands", List.of("Eritrea", "Haiti", "Syria", "Vanuatu", "Yemen")),
+                Arguments.of("FR", "France", List.of("Haiti", "Syria", "Yemen")),
                 Arguments.of("MT", "Malta", List.of("Belarus", "Russia"))
         );
     }
