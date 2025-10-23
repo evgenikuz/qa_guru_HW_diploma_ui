@@ -12,7 +12,7 @@ public class ConcentModalComponent {
 
     public ConcentModalComponent checkModalExists() {
         step("Проверяем наличие модального окна", () -> {
-            concentModal.wait(5000);
+            sleep(5000);
             if (concentModal.isDisplayed()) {
                 step("Закрываем модальное окно", () -> {
                     concentButton.click();

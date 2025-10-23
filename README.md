@@ -77,15 +77,25 @@
 >- *remote* - для удаленного запуска
 
 ### Запуск тестов из терминала
+Для локального запуска тестов в терминале IDE нужно ввести:
 ```
 clean test
 ```
-При выполнении данной команды в терминале IDE тесты запустятся локально.
-
+Для удаленного запуска в Docker-контейнере <code>Selenoid</code> в терминале IDE нужно ввести:
 ```
-clean test -DtestLaunchType=remote
+clean test -DtestLaunchType=remote -Dusername=${USERNAME} -Dpassword=${PASSWORD}
 ```
-При выполнении данной команды в терминале IDE тесты запустятся удаленно в Docker-контейнере <code>Selenoid</code>.
+Самые любопытные могут попробовать изменить параметры:
+```
+clean test -DtestLaunchType=${TEST_LAUNCH_TYPE} -Dusername=${USERNAME} -Dpassword=${PASSWORD} -Dbrowser.name=${BROWSER_NAME} -Dbrowser.version=${BROWSER_VERSION} -Dbrowser.size=${BROWSER_SIZE} -Dremote.url=${SELENOID_URL}
+```
+- `-DtestLaunchType` - параметр, позволяющий выбрать запуск удаленно <code>remote</code> или локально <code>local</code>.
+- `-Dusername` - имя юзера в Selenoid.
+- `-Dpassword` - пароль юзера в Selenoid.
+- `-Dbrowser.name` - параметр, позволяющий выбрать браузер <code>chrome</code> или <code>firefox</code>.
+- `-Dbrowser.version` - параметр, позволяющий выбрать версию chrome <code>127.0, 128.0</code> или firefox <code>124.0, 125.0</code>.
+- `-Dbrowser.size` - параметр, позволяющий выбрать размер браузера <code>1980x1080, 1280x1024, 800x600</code>.
+- `-Dremote.url` - параметр, позволяющий выбрать адрес удаленного сервера Selenoid.
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/c36-evded-qa-guru-hw-diploma-ui/">Jenkins</a></b>
 
