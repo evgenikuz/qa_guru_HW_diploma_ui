@@ -1,7 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.components.ConcentModalComponent;
+import pages.components.ConsentModalComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -16,7 +16,7 @@ public class LoginPage {
             loginError = $("#loginForm .error"),
             forgotSomethingLink = $(".forgot-something");
 
-    ConcentModalComponent concentModalComponent = new ConcentModalComponent();
+    ConsentModalComponent consentModalComponent = new ConsentModalComponent();
 
     public LoginPage openLoginPage() {
         step("Открываем страницу авторизации", () -> {
@@ -27,7 +27,7 @@ public class LoginPage {
     }
 
     public LoginPage closeModal() {
-        concentModalComponent.checkModalExists();
+        consentModalComponent.checkModalExists();
         return this;
     }
 

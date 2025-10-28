@@ -6,14 +6,14 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
-public class ConcentModalComponent {
-    private final SelenideElement concentModal = $(".fc-dialog-container"),
-                                concentButton = $(".fc-button-label");
+public class ConsentModalComponent {
+    private final SelenideElement consentModal = $(".fc-dialog-container"),
+                                consentButton = $(".fc-button-label");
 
-    public ConcentModalComponent checkModalExists() {
+    public ConsentModalComponent checkModalExists() {
         step("Проверяем наличие модального окна", () -> {
-            if (concentModal.is(Condition.visible)) {
-                concentButton.click();
+            if (consentModal.is(Condition.visible)) {
+                consentButton.click();
             }
         });
         return this;
