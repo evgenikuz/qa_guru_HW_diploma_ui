@@ -81,11 +81,23 @@
 ```
 gradle clean test
 ```
-Для удаленного запуска в Docker-контейнере <code>Selenoid</code> в терминале IDE нужно ввести:
+
+ДДля удаленного запуска в Docker-контейнере <code>Selenoid</code> в папке resources локально можно создать файл auth.properties со следующим содержимым:
 ```
-gradle clean test -DtestLaunchType=remote -Dusername=${SELENOID_USERNAME} -Dpassword=${SELENOID_PASSWORD}
+username=${SELENOID_USERNAME}
+password=${SELENOID_PASSWORD}
 ```
-Самые любопытные могут попробовать изменить параметры:
+Где в качестве переменных указать логин и пароль юзера Selenoid.
+- `-Dselenoid.username` - имя юзера в Selenoid.
+- `-Dselenoid.password` - пароль юзера в Selenoid.
+
+Затем в терминале IDE нужно ввести:
+```
+gradle clean test -DtestLaunchType=remote
+```
+Если файл auth.properties создан не был, то к скрипту нужно добавить `-Dusername=${SELENOID_USERNAME} -Dpassword=${SELENOID_PASSWORD}`.
+
+Самые любопытные могут попробовать изменить параметры в файлах local.config и remote.config, a а так же в скрипте:
 ```
 gradle clean test -DtestLaunchType=${TEST_LAUNCH_TYPE} -Dselenoid.username=${SELENOID_USERNAME} -Dselenoid.password=${SELENOID_PASSWORD} -Dbrowser.name=${BROWSER_NAME} -Dbrowser.version=${BROWSER_VERSION} -Dbrowser.size=${BROWSER_SIZE} -Dremote.url=${SELENOID_URL}
 ```
@@ -97,7 +109,7 @@ gradle clean test -DtestLaunchType=${TEST_LAUNCH_TYPE} -Dselenoid.username=${SEL
 - `-Dbrowser.size` - параметр, позволяющий выбрать размер браузера <code>1980x1080, 1280x1024, 1366x768</code>.
 - `-Dremote.url` - параметр, позволяющий выбрать адрес удаленного сервера Selenoid.
 
-## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/c36-evded-qa-guru-hw-diploma-ui/">Jenkins</a></b>
+## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/c36-evded-qa-guru-hw-diploma-tests/">Jenkins</a></b>
 
 Для запуска сборки необходимо перейти в раздел <code>Build with Parameters</code> и нажать кнопку <code>Build</code>.
 <p align="center">
@@ -109,7 +121,7 @@ gradle clean test -DtestLaunchType=${TEST_LAUNCH_TYPE} -Dselenoid.username=${SEL
 <img title="Jenkins Build" src="media/screens/jenkins.jpg" width="750">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> Пример <b><a target="_blank" href="https://jenkins.autotests.cloud/job/c36-evded-qa-guru-hw-diploma-ui/15/allure/">Allure-отчета</a></b>
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> Пример <b><a target="_blank" href="https://jenkins.autotests.cloud/job/c36-evded-qa-guru-hw-diploma-tests/15/allure/">Allure-отчета</a></b>
 ### Overview
 Главная страница отчета Allure содержит следующие блоки:
 
