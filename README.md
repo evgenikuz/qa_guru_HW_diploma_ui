@@ -82,14 +82,14 @@
 gradle clean test
 ```
 
-ДДля удаленного запуска в Docker-контейнере <code>Selenoid</code> в папке resources локально можно создать файл auth.properties со следующим содержимым:
+Для удаленного запуска в Docker-контейнере <code>Selenoid</code> в папке resources локально можно создать файл auth.properties со следующим содержимым:
 ```
 username=${SELENOID_USERNAME}
 password=${SELENOID_PASSWORD}
 ```
 Где в качестве переменных указать логин и пароль юзера Selenoid.
-- `-Dselenoid.username` - имя юзера в Selenoid.
-- `-Dselenoid.password` - пароль юзера в Selenoid.
+- `${SELENOID_USERNAME}` - имя юзера в Selenoid.
+- `${SELENOID_PASSWORD}` - пароль юзера в Selenoid.
 
 Затем в терминале IDE нужно ввести:
 ```
