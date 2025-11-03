@@ -1,12 +1,12 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import pages.components.ConsentModalComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
-import static io.qameta.allure.Allure.step;
 
 public class LoginPage {
     private final SelenideElement header = $("h2"),
@@ -18,11 +18,10 @@ public class LoginPage {
 
     ConsentModalComponent consentModalComponent = new ConsentModalComponent();
 
+    @Step("Открываем страницу авторизации")
     public LoginPage openLoginPage() {
-        step("Открываем страницу авторизации", () -> {
-            open("/login");
-            header.shouldHave(text("Log in"));
-        });
+        open("/login");
+        header.shouldHave(text("Log in"));
         return this;
     }
 
@@ -31,39 +30,34 @@ public class LoginPage {
         return this;
     }
 
+    @Step("Вводим логин")
     public LoginPage enterUsername(String username) {
-        step("Вводим логин", () -> {
-            usernameInput.sendKeys(username);
-        });
+        usernameInput.sendKeys(username);
         return this;
     }
 
+    @Step("Вводим пароль")
     public LoginPage enterPassword(String password) {
-        step("Вводим пароль", () -> {
-            passwordInput.sendKeys(password);
-        });
+        passwordInput.sendKeys(password);
         return this;
     }
 
+    @Step("Нажимаем кнопку Log in")
     public LoginPage pressLoginButton() {
-        step("Нажимаем кнопку Log in", () -> {
-            loginButton.click();
-        });
+        loginButton.click();
         return this;
     }
 
+    @Step("Проверяем наличие ошибки")
     public LoginPage checkError(String error) {
-        step("Проверяем наличие ошибки", () -> {
-            loginError.shouldHave(text(error));
-        });
+        loginError.shouldHave(text(error));
         return this;
     }
 
+    @Step("Проверяем кнопку 'Forgot Something'")
     public LoginPage clickOnForgotSomething() {
-        step("Проверяем кнопку 'Forgot Something'", () -> {
-            forgotSomethingLink.click();
-            webdriver().shouldHave(url("https://www.postcrossing.com/recoverpassword"));
-        });
+        forgotSomethingLink.click();
+        webdriver().shouldHave(url("https://www.postcrossing.com/recoverpassword"));
         return this;
     }
 }
